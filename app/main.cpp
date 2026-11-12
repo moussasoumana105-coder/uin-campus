@@ -3,6 +3,6 @@
 
 int main()
 {
-  std::cout << "UIN-Campus — Système de gestion académique\n";
-  std::cout << "Version " << uin::version() << "\n";
+    std::cout << "UIN-Campus — Système de gestion académique\n";
+    std::cout << "Version " << uin::version() << "\n";
 }
