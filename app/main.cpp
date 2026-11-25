@@ -1,7 +1,4 @@
-#include "uincampus/calculs.hpp"
-#include "uincampus/regles.hpp"
-#include "uincampus/saisie.hpp"
-#include "uincampus/version.hpp"
+#include "uincampus/uincampus.hpp"
 
 #include <cstdlib>
 #include <iomanip>
@@ -19,7 +16,7 @@ enum class Suite { Continuer, Terminer, Erreur };
 void afficherAide()
 {
     std::cout << "Usage : uin-campus [--version] [--aide]\n"
-              << " --version    affiche la version\n"
+              << " --version    affiche la version et les informations de construction\n"
               << " --aide       affiche cette aide\n";
 }
 
@@ -30,7 +27,7 @@ void afficherAide()
     }
     for (const std::string_view option : arguments.subspan(1)) {
         if (option == "--version") {
-            std::cout << "uin-campus " << uin::version() << '\n';
+            std::cout << uin::informationsConstruction() << '\n';
             return Suite::Terminer;
         }
         if (option == "--aide") {
